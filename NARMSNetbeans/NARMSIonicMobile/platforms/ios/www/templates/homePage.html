@@ -1,0 +1,21 @@
+<ion-view style="" title="Home Page">
+    <ion-content class="has-header" overflow-scroll="true" padding="true">
+        <div class="light">
+            <h2 class="dashtitle narmsgreen" style="">{{centername}}</h2>
+            <h3 class="dynamic" style="">Welcome {{username}}</h3>
+            <h3 class="dashtext" style="">{{samplingDate | date:'MMMM'}}</h3>
+            <h4 class="dashtext under" style="">Center Samples Remaining: <span class="dynamic"> {{centerremaining}}</span></h4>
+            <h4 class="dashtext under" style="">Days Remaining: <span class="dynamic">{{daysleft}}</span></h4>
+            <div style="height: 20px;" class="spacer"></div>
+        </div>
+        <div style="height: 20px;" class="spacer"></div>
+        <div class="row">
+            <div class="col col-offset-10 col-80">
+        <a style="" class="button button-balanced button-block  icon-left ion-erlenmeyer-flask" href="#/homepage/samplelog">Collect Meat Sample</a>
+        <a style="" class="button button-balanced button-block  icon-left ion-eye" href="#/homepage/activityLog">Activity Details</a>
+        <a style="" class="button button-balanced button-block  icon-left ion-clipboard" href="#/homepage/sampleLogDetails">Sample Log Details</a>
+        <a style="" class="button button-balanced button-block  icon-left ion-earth" ng-click="navigationToRoute()">Start Navigation</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

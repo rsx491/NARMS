@@ -1,0 +1,398 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+        <bean id="sampleConstants" class="com.aurotech.constants.SampleConstants">
+		<property name="source">
+			<map>
+                            <entry key="Humans" value="Humans" />
+                            <entry key="Retail" value="Retail" />
+                            <entry key="Slaughter" value="Slaughter" />
+                            <entry key="Cecal" value="Cecal" />
+                            <entry key="Beef Cecal" value="Beef Cecal" />
+                            <entry key="Dairy Cecal" value="Dairy Cecal" />
+                            <entry key="Market Hogs Cecal" value="Market Hogs Cecal" />
+                            <entry key="Sows Cecal" value="Sows Cecal" />
+			</map>
+		</property>
+                
+		<property name="growth">
+			<map>
+                            <entry key="YES" value="YES" />
+                            <entry key="NO" value="NO" />
+                            <entry key="Didn't test" value="Didn't test" />
+			</map>
+		</property>                
+                
+		<property name="genus">
+			<map>
+                            <entry key="Campylobacter" value="C" />
+                            <entry key="Enterococcus" value="E" />
+                            <entry key="Escherichia" value="EC" />
+                            <entry key="Salmonella" value="S" />
+			</map>
+		</property>                
+                
+		<property name="genusName">
+			<map>
+                            <entry key="C" value="Campylobacter" />
+                            <entry key="E" value="Enterococcus" />
+                            <entry key="EC" value="Escherichia" />
+                            <entry key="S" value="Salmonella" />
+			</map>
+		</property>                
+                
+		<property name="meatName">
+			<map>
+                            <entry key="1" value="Chicken" />
+                            <entry key="2" value="Beef" />
+                            <entry key="3" value="Turkey" />
+                            <entry key="4" value="Pork" />
+			</map>
+		</property>                
+                
+		<property name="meatNameKey">
+			<map>
+                            <entry key="Chicken" value="1" />
+                            <entry key="Beef" value="2" />
+                            <entry key="Turkey" value="3" />
+                            <entry key="Pork" value="4" />
+			</map>
+		</property>                
+                
+		<property name="meatNameShort">
+			<map>
+                            <entry key="Chicken" value="C" />
+                            <entry key="Beef" value="B" />
+                            <entry key="Turkey" value="T" />
+                            <entry key="Pork" value="P" />
+			</map>
+		</property>                
+                
+		<property name="meatType">
+			<map>
+                            <entry key="1" value="Ground" />
+                            <entry key="2" value="Patties" />
+                            <entry key="3" value="Chops" />
+                            <entry key="4" value="Breast" />
+                            <entry key="5" value="Legs" />
+                            <entry key="6" value="Wings" />
+                            <entry key="7" value="Whole" />
+			</map>
+		</property> 
+                
+		<property name="meatTypeShort">
+			<map>
+                            <entry key="Ground" value="G" />
+                            <entry key="Patties" value="P" />
+                            <entry key="Chops" value="C" />
+                            <entry key="Breast" value="B" />
+                            <entry key="Legs" value="L" />
+                            <entry key="Wings" value="W" />
+                            <entry key="Whole" value="H" />
+			</map>
+		</property>                 
+                  
+		<property name="meatEnvironment">
+			<map>
+                            <entry key="1" value="Antibiotic Free" />
+                            <entry key="2" value="Both" />
+                            <entry key="3" value="Not Specified" />
+                            <entry key="4" value="Organic" />
+			</map>
+		</property> 
+                
+		<property name="stateCode">
+			<map>
+                            <entry key="California" value="CA" />
+                            <entry key="Colorado" value="CO" />
+                            <entry key="Connecticut" value="CT" />
+                            <entry key="Georgia" value="Georgia" />
+                            <entry key="Louisiana" value="LA" />
+                            <entry key="Maryland" value="MD" />
+                            <entry key="Minnesota" value="MN" />
+                            <entry key="New Mexico" value="NM" />
+                            <entry key="New York" value="NY" />
+                            <entry key="Oregon" value="OR" />
+                            <entry key="Pennsylvania" value="PA" />
+                            <entry key="Tennessee" value="TN" />
+                            <entry key="Washington" value="WA" />
+			</map>
+		</property> 
+                
+		<property name="countriesList">
+			<map>
+                            <entry key="AF" value="Afghanistan" />
+                            <entry key="AL" value="Albania" />
+                            <entry key="DZ" value="Algeria" />
+                            <entry key="AS" value="American Samoa" />
+                            <entry key="AD" value="Andorra" />
+                            <entry key="AO" value="Angola" />
+                            <entry key="AI" value="Anguilla" />
+                            <entry key="AQ" value="Antarctica" />
+                            <entry key="AG" value="Antigua And Barbuda" />
+                            <entry key="AR" value="Argentina" />
+                            <entry key="AM" value="Armenia" />
+                            <entry key="AW" value="Aruba" />
+                            <entry key="AU" value="Australia" />
+                            <entry key="AT" value="Austria" />
+                            <entry key="AZ" value="Azerbaijan" />
+                            <entry key="BS" value="Bahamas The" />
+                            <entry key="BH" value="Bahrain" />
+                            <entry key="BD" value="Bangladesh" />
+                            <entry key="BB" value="Barbados" />
+                            <entry key="BY" value="Belarus" />
+                            <entry key="BE" value="Belgium" />
+                            <entry key="BZ" value="Belize" />
+                            <entry key="BJ" value="Benin" />
+                            <entry key="BM" value="Bermuda" />
+                            <entry key="BT" value="Bhutan" />
+                            <entry key="BO" value="Bolivia" />
+                            <entry key="BA" value="Bosnia and Herzegovina" />
+                            <entry key="BW" value="Botswana" />
+                            <entry key="BV" value="Bouvet Island" />
+                            <entry key="BR" value="Brazil" />
+                            <entry key="IO" value="British Indian Ocean Territory" />
+                            <entry key="BN" value="Brunei" />
+                            <entry key="BG" value="Bulgaria" />
+                            <entry key="BF" value="Burkina Faso" />
+                            <entry key="BI" value="Burundi" />
+                            <entry key="KH" value="Cambodia" />
+                            <entry key="CM" value="Cameroon" />
+                            <entry key="CA" value="Canada" />
+                            <entry key="CV" value="Cape Verde" />
+                            <entry key="KY" value="Cayman Islands" />
+                            <entry key="CF" value="Central African Republic" />
+                            <entry key="TD" value="Chad" />
+                            <entry key="CL" value="Chile" />
+                            <entry key="CN" value="China" />
+                            <entry key="CX" value="Christmas Island" />
+                            <entry key="CC" value="Cocos (Keeling) Islands" />
+                            <entry key="CO" value="Colombia" />
+                            <entry key="KM" value="Comoros" />
+                            <entry key="CG" value="Congo" />
+                            <entry key="CD" value="Congo The Democratic Republic Of The" />
+                            <entry key="CK" value="Cook Islands" />
+                            <entry key="CR" value="Costa Rica" />
+                            <entry key="CI" value="Cote D''Ivoire (Ivory Coast)" />
+                            <entry key="HR" value="Croatia (Hrvatska)" />
+                            <entry key="CU" value="Cuba" />
+                            <entry key="CY" value="Cyprus" />
+                            <entry key="CZ" value="Czech Republic" />
+                            <entry key="DK" value="Denmark" />
+                            <entry key="DJ" value="Djibouti" />
+                            <entry key="DM" value="Dominica" />
+                            <entry key="DO" value="Dominican Republic" />
+                            <entry key="TP" value="East Timor" />
+                            <entry key="EC" value="Ecuador" />
+                            <entry key="EG" value="Egypt" />
+                            <entry key="SV" value="El Salvador" />
+                            <entry key="GQ" value="Equatorial Guinea" />
+                            <entry key="ER" value="Eritrea" />
+                            <entry key="EE" value="Estonia" />
+                            <entry key="ET" value="Ethiopia" />
+                            <entry key="XA" value="External Territories of Australia" />
+                            <entry key="FK" value="Falkland Islands" />
+                            <entry key="FO" value="Faroe Islands" />
+                            <entry key="FJ" value="Fiji Islands" />
+                            <entry key="FI" value="Finland" />
+                            <entry key="FR" value="France" />
+                            <entry key="GF" value="French Guiana" />
+                            <entry key="PF" value="French Polynesia" />
+                            <entry key="TF" value="French Southern Territories" />
+                            <entry key="GA" value="Gabon" />
+                            <entry key="GM" value="Gambia The" />
+                            <entry key="GE" value="Georgia" />
+                            <entry key="DE" value="Germany" />
+                            <entry key="GH" value="Ghana" />
+                            <entry key="GI" value="Gibraltar" />
+                            <entry key="GR" value="Greece" />
+                            <entry key="GL" value="Greenland" />
+                            <entry key="GD" value="Grenada" />
+                            <entry key="GP" value="Guadeloupe" />
+                            <entry key="GU" value="Guam" />
+                            <entry key="GT" value="Guatemala" />
+                            <entry key="XU" value="Guernsey and Alderney" />
+                            <entry key="GN" value="Guinea" />
+                            <entry key="GW" value="Guinea-Bissau" />
+                            <entry key="GY" value="Guyana" />
+                            <entry key="HT" value="Haiti" />
+                            <entry key="HM" value="Heard and McDonald Islands" />
+                            <entry key="HN" value="Honduras" />
+                            <entry key="HK" value="Hong Kong S.A.R." />
+                            <entry key="HU" value="Hungary" />
+                            <entry key="IS" value="Iceland" />
+                            <entry key="IN" value="India" />
+                            <entry key="ID" value="Indonesia" />
+                            <entry key="IR" value="Iran" />
+                            <entry key="IQ" value="Iraq" />
+                            <entry key="IE" value="Ireland" />
+                            <entry key="IL" value="Israel" />
+                            <entry key="IT" value="Italy" />
+                            <entry key="JM" value="Jamaica" />
+                            <entry key="JP" value="Japan" />
+                            <entry key="XJ" value="Jersey" />
+                            <entry key="JO" value="Jordan" />
+                            <entry key="KZ" value="Kazakhstan" />
+                            <entry key="KE" value="Kenya" />
+                            <entry key="KI" value="Kiribati" />
+                            <entry key="KP" value="Korea North" />
+                            <entry key="KR" value="Korea South" />
+                            <entry key="KW" value="Kuwait" />
+                            <entry key="KG" value="Kyrgyzstan" />
+                            <entry key="LA" value="Laos" />
+                            <entry key="LV" value="Latvia" />
+                            <entry key="LB" value="Lebanon" />
+                            <entry key="LS" value="Lesotho" />
+                            <entry key="LR" value="Liberia" />
+                            <entry key="LY" value="Libya" />
+                            <entry key="LI" value="Liechtenstein" />
+                            <entry key="LT" value="Lithuania" />
+                            <entry key="LU" value="Luxembourg" />
+                            <entry key="MO" value="Macau S.A.R." />
+                            <entry key="MK" value="Macedonia" />
+                            <entry key="MG" value="Madagascar" />
+                            <entry key="MW" value="Malawi" />
+                            <entry key="MY" value="Malaysia" />
+                            <entry key="MV" value="Maldives" />
+                            <entry key="ML" value="Mali" />
+                            <entry key="MT" value="Malta" />
+                            <entry key="XM" value="Man (Isle of)" />
+                            <entry key="MH" value="Marshall Islands" />
+                            <entry key="MQ" value="Martinique" />
+                            <entry key="MR" value="Mauritania" />
+                            <entry key="MU" value="Mauritius" />
+                            <entry key="YT" value="Mayotte" />
+                            <entry key="MX" value="Mexico" />
+                            <entry key="FM" value="Micronesia" />
+                            <entry key="MD" value="Moldova" />
+                            <entry key="MC" value="Monaco" />
+                            <entry key="MN" value="Mongolia" />
+                            <entry key="MS" value="Montserrat" />
+                            <entry key="MA" value="Morocco" />
+                            <entry key="MZ" value="Mozambique" />
+                            <entry key="MM" value="Myanmar" />
+                            <entry key="NA" value="Namibia" />
+                            <entry key="NR" value="Nauru" />
+                            <entry key="NP" value="Nepal" />
+                            <entry key="AN" value="Netherlands Antilles" />
+                            <entry key="NL" value="Netherlands The" />
+                            <entry key="NC" value="New Caledonia" />
+                            <entry key="NZ" value="New Zealand" />
+                            <entry key="NI" value="Nicaragua" />
+                            <entry key="NE" value="Niger" />
+                            <entry key="NG" value="Nigeria" />
+                            <entry key="NU" value="Niue" />
+                            <entry key="NF" value="Norfolk Island" />
+                            <entry key="MP" value="Northern Mariana Islands" />
+                            <entry key="NO" value="Norway" />
+                            <entry key="OM" value="Oman" />
+                            <entry key="PK" value="Pakistan" />
+                            <entry key="PW" value="Palau" />
+                            <entry key="PS" value="Palestinian Territory Occupied" />
+                            <entry key="PA" value="Panama" />
+                            <entry key="PG" value="Papua new Guinea" />
+                            <entry key="PY" value="Paraguay" />
+                            <entry key="PE" value="Peru" />
+                            <entry key="PH" value="Philippines" />
+                            <entry key="PN" value="Pitcairn Island" />
+                            <entry key="PL" value="Poland" />
+                            <entry key="PT" value="Portugal" />
+                            <entry key="PR" value="Puerto Rico" />
+                            <entry key="QA" value="Qatar" />
+                            <entry key="RE" value="Reunion" />
+                            <entry key="RO" value="Romania" />
+                            <entry key="RU" value="Russia" />
+                            <entry key="RW" value="Rwanda" />
+                            <entry key="SH" value="Saint Helena" />
+                            <entry key="KN" value="Saint Kitts And Nevis" />
+                            <entry key="LC" value="Saint Lucia" />
+                            <entry key="PM" value="Saint Pierre and Miquelon" />
+                            <entry key="VC" value="Saint Vincent And The Grenadines" />
+                            <entry key="WS" value="Samoa" />
+                            <entry key="SM" value="San Marino" />
+                            <entry key="ST" value="Sao Tome and Principe" />
+                            <entry key="SA" value="Saudi Arabia" />
+                            <entry key="SN" value="Senegal" />
+                            <entry key="RS" value="Serbia" />
+                            <entry key="SC" value="Seychelles" />
+                            <entry key="SL" value="Sierra Leone" />
+                            <entry key="SG" value="Singapore" />
+                            <entry key="SK" value="Slovakia" />
+                            <entry key="SI" value="Slovenia" />
+                            <entry key="XG" value="Smaller Territories of the UK" />
+                            <entry key="SB" value="Solomon Islands" />
+                            <entry key="SO" value="Somalia" />
+                            <entry key="ZA" value="South Africa" />
+                            <entry key="GS" value="South Georgia" />
+                            <entry key="SS" value="South Sudan" />
+                            <entry key="ES" value="Spain" />
+                            <entry key="LK" value="Sri Lanka" />
+                            <entry key="SD" value="Sudan" />
+                            <entry key="SR" value="Suriname" />
+                            <entry key="SJ" value="Svalbard And Jan Mayen Islands" />
+                            <entry key="SZ" value="Swaziland" />
+                            <entry key="SE" value="Sweden" />
+                            <entry key="CH" value="Switzerland" />
+                            <entry key="SY" value="Syria" />
+                            <entry key="TW" value="Taiwan" />
+                            <entry key="TJ" value="Tajikistan" />
+                            <entry key="TZ" value="Tanzania" />
+                            <entry key="TH" value="Thailand" />
+                            <entry key="TG" value="Togo" />
+                            <entry key="TK" value="Tokelau" />
+                            <entry key="TO" value="Tonga" />
+                            <entry key="TT" value="Trinidad And Tobago" />
+                            <entry key="TN" value="Tunisia" />
+                            <entry key="TR" value="Turkey" />
+                            <entry key="TM" value="Turkmenistan" />
+                            <entry key="TC" value="Turks And Caicos Islands" />
+                            <entry key="TV" value="Tuvalu" />
+                            <entry key="UG" value="Uganda" />
+                            <entry key="UA" value="Ukraine" />
+                            <entry key="AE" value="United Arab Emirates" />
+                            <entry key="GB" value="United Kingdom" />
+                            <entry key="US" value="United States" />
+                            <entry key="UM" value="United States Minor Outlying Islands" />
+                            <entry key="UY" value="Uruguay" />
+                            <entry key="UZ" value="Uzbekistan" />
+                            <entry key="VU" value="Vanuatu" />
+                            <entry key="VA" value="Vatican City State (Holy See)" />
+                            <entry key="VE" value="Venezuela" />
+                            <entry key="VN" value="Vietnam" />
+                            <entry key="VG" value="Virgin Islands (British)" />
+                            <entry key="VI" value="Virgin Islands (US)" />
+                            <entry key="WF" value="Wallis And Futuna Islands" />
+                            <entry key="EH" value="Western Sahara" />
+                            <entry key="YE" value="Yemen" />
+                            <entry key="YU" value="Yugoslavia" />
+                            <entry key="ZM" value="Zambia" />
+                            <entry key="ZW" value="Zimbabwe" />
+
+			</map>
+		</property>                
+                                                                                                                                                              
+	</bean>
+        
+        <bean id="narmsConstants" class="com.aurotech.constants.NarmsConstants">
+		<property name="CONSTANTS">
+			<map>
+                            <entry key="FILE_PROTOCOL" value="file" />
+                            <entry key="FILE_HOST" value="localhost" />
+                            <entry key="REPO_ROOT" value="/NARMS" />
+                            <entry key="DATE_FORMAT" value="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" />
+                            <entry key="DOC_PATH_PREFIX" value="/getDocument/" />
+                            <entry key="TOKEN_KEY" value="token" />
+			</map>
+		</property> 
+                
+		<property name="usertype">
+			<map>
+                            <entry key="labuser" value="labuser" />
+                            <entry key="storeuser" value="storeuser" />
+                            <entry key="admin" value="admin" />
+			</map>
+		</property>                                                                                                                                                                                                                                                                                                                   
+	</bean>        
+</beans>

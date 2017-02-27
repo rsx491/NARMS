@@ -1,0 +1,40 @@
+<ion-view style="background: linear-gradient(white, rgb(17,104,53));" title="">
+    <ion-content class="has-header" scroll="false" overflow-scroll="true" padding="true">
+        <div style="height: 40px;" class="spacer"></div>
+        <div align="center" class="logo"></div>
+        <div style="height: 40px;" class="spacer"></div>
+        <form name="resetfm" style="" class="list">
+
+            <ion-list style="">
+                <div class="row">
+                    <div class="col col-offset-10 col-80">
+                        <label name="email" class="item item-input faded" ng-class="{ 'has-errors' : resetfm.email.$invalid, 'no-errors' : resetfm.email.$valid}">
+                        <i class="icon ion-email login-icon"></i>
+                        <input name="email" class="login-text" placeholder="Email" ng-minlength="5"  ng-model="data.email" type="email" required />
+                        
+                        </label>
+                        <div class="error-container" ng-show="resetfm.email.$error" ng-messages="resetfm.email.$error">
+                            <!-- <div ng-messages-include="error-list.html"></div> -->
+                        </div>
+
+                <label name="password" class="item item-input faded" ng-show="data.showPassword">
+                    <input placeholder="New Password" ng-model="data.password" type="password" />
+                </label>
+                </div>
+                </div>
+            </ion-list>
+            <div class="row">
+                <div class="col col-offset-10 col-80">
+                    <a class="button  button-block button-positive" ng-disabled="resetfm.$invalid" ng-click="reset(data)" >{{data.submitLabel}}</a>
+                </div>
+            </div>
+            <div style="height: 40px;" class="spacer"></div>
+            
+            <div class="row">
+                <div class="col col-offset-10 col-80">
+                    <a class="button button-positive button-clear button-block" href="#/loginpage" >Return to Login</a>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,107 @@
+﻿.error-container {
+  margin: 1px 0;
+}
+
+.error-container:last-child {
+    margin: 5px 0 0;
+}
+
+.error {
+  padding: 5px 16px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size:11px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  vertical-align: middle;
+}
+
+.error i {
+  font-size: 24px;
+  color: #B83E2C;  
+  vertical-align: middle;
+}
+
+.last-error-container > .error {
+  padding: 10px 12px 0;
+}
+
+.has-errors {
+  border-bottom: 2px solid #B83E2C;
+}
+
+.no-errors {
+  border-bottom: 2px solid green;
+}
+.floatRight{
+    float:right;
+}
+.margin0{
+    margin:0 !important;
+}
+.paddingForListInTab{
+    padding-top:60px !important;
+}
+/* Search List inside tab bar */
+.button.button-icon.input-button {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  color: #bbb;
+}
+
+.item img {
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+.paddingLeft20{
+    padding-left: 20px;
+}
+
+table.crud {
+  clear: both;
+}
+th.crud {
+  padding: 15px 10px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(17,17,17);
+  font-size: 16px;
+}
+td.crud {
+  padding: 15px 10px;
+  color: black;
+}
+
+div.crud-row > label {
+  min-width:150px;
+  
+  margin-right: 20px;
+}
+div.crud-row > input {
+  padding-left: 5px;
+}
+
+div.crud-results {
+
+}
+
+ion-content.admin-panel {
+  overflow: auto;
+}
+
+div.admin-content {
+  padding-left: 50px;
+}
+
+div.crud-pagination > ul > li {
+  padding: 5px;
+  float: left;
+  color: black;
+}

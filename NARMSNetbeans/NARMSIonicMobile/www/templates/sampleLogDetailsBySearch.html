@@ -1,0 +1,80 @@
+    <ion-view title="Search Sample list">
+
+      <ion-nav-buttons side="right">
+
+        
+ <div class="buttons">
+        <button class="button button-icon ion-calendar" ng-click="openModal()">
+        </button>
+      </div>
+      </ion-nav-buttons>
+        <ion-header-bar class="bar-light bar-subheader">
+      <input type="search"
+        placeholder="Filter contacts..."
+        ng-model="searchQuery">
+      <button ng-if="searchQuery.length"
+        class="button button-icon ion-android-close input-button"
+        ng-click="clearSearch()">
+      </button>
+    </ion-header-bar>
+      <ion-content has-header="true" padding="true">          
+          <ul class="list" ng-show="selectables.length == 0">
+                <li class="item">
+                  No Samples Found.
+                </li>
+            </ul>
+
+          <ion-list>
+              <ion-item class="my-item" ng-repeat="item in selectables |filter:searchQuery" ng-click="showSampleEdit(item)">
+                  {{item.sampleid}}
+                    {{meetNames[item.meat]}}
+                    {{typeNames[item.type]}}                  
+                    {{item.datePurchase | date:'yyyy-MM-dd'}} 
+              </ion-item>
+            </ion-list>
+      </ion-content>
+
+        <ion-footer-bar>
+      <div class="tabs">        
+        <a nav-clear class="tab-item disable-user-behavior" title="Center Sample list" icon-on="ion-ios-color-filter" icon-off="ion-ios-color-filter-outline" ui-sref="hOME.sampleLogDetailsByCenter">
+          <i class="icon ion-ios-color-filter"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior active" title="Search Sample list" icon-on="ion-search" icon-off="ion-search" ui-sref="hOME.sampleLogDetailsBySearch">
+          <i class="icon ion-ios-search"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+        <a nav-clear class="tab-item disable-user-behavior" title="My Sample list" nav-clear ui-sref="hOME.sampleLogDetails">
+          <i class="icon ion-ios-person"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+      </div>
+        </ion-footer-bar>
+        
+    <script id="templates/modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-dark">
+          <h1 class="title"> Search by Date </h1>
+          <button class="button button-clear button-positive" ng-click="closeModal()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Start Date</span>      
+              <ionic-datepicker date="currentStartDate" min="minDate" max="maxDate" callback="callbackSearchStartDate">
+                <button class="button button-block item item-input-inset margin0"> {{ currentStartDate | date:'dd/MM/yyyy' }} 
+                <i class="icon icon ion-calendar floatRight paddingLeft20"></i></button>
+                </ionic-datepicker>
+             
+            </label>
+            <label class="item item-input">
+              <span class="input-label">End Date</span>    
+                <ionic-datepicker date="currentEndDate" min="minDate" max="maxDate" callback="callbackSearchEndDate">
+                <button class="button button-block item item-input-inset margin0"> {{ currentEndDate | date:'dd/MM/yyyy' }}
+                    <i class="icon icon ion-calendar floatRight paddingLeft20"></i></button>
+                </ionic-datepicker>              
+            </label>
+    
+            <button class="button button-full button-positive" ng-click="searchByDate(dtsearch)">Search </button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+    </ion-view>

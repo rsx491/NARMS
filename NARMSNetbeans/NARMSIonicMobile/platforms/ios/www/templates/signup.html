@@ -1,0 +1,52 @@
+<ion-view style="background: linear-gradient(white, rgb(17,104,53));" title="">
+    <ion-content class="has-header" scroll="false" overflow-scroll="true" padding="true">
+        <div style="height: 20px;" class="spacer"></div>
+        <div align="center" class="logo"></div>
+        <div style="height: 20px;" class="spacer"></div>
+        <form name="fsignup" style="" class="list">
+            <ion-list style="">
+                <div class="row">
+                    <div class="col col-offset-10 col-80">
+                <label name="firstname" class="item item-input faded" ng-class="{ 'has-errors' : fsignup.firstname.$invalid, 'no-errors' : fsignup.firstname.$valid}">
+                    <input class="login-text" placeholder="First Name" name="firstname" required type="text" ng-model="data.firstname">
+                </label>
+                <div class="error-container" ng-show="fsignup.firstname.$error" ng-messages="fsignup.firstname.$error">
+                    <!-- <div ng-messages-include="error-list.html"></div> -->
+                </div>
+                <label name="lastname" class="item item-input faded" ng-class="{ 'has-errors' : fsignup.lastname.$invalid, 'no-errors' : fsignup.lastname.$valid}">
+                    <input class="login-text" placeholder="Last Name" name="lastname" required type="text" ng-model="data.lastname">
+                </label>
+                <div class="error-container" ng-show="fsignup.lastname.$error" ng-messages="fsignup.firstname.$error">
+                    <!-- <div ng-messages-include="error-list.html"></div> -->
+                </div>
+                <label name="password" class="item item-input faded" ng-class="{ 'has-errors' : fsignup.password.$invalid, 'no-errors' : fsignup.password.$valid}">
+                    <input class="login-text" placeholder="Password" name="password" required type="password" ng-model="data.password">
+                </label>
+                <div class="error-container" ng-show="fsignup.password.$error" ng-messages="fsignup.password.$error">
+                    <!-- <div ng-messages-include="error-list.html"></div> -->
+                </div>
+                <label name="email" class="item item-input faded" ng-class="{ 'has-errors' : fsignup.email.$invalid, 'no-errors' : fsignup.email.$valid}">
+                    <input class="login-text" placeholder="Email" name="email" required type="email" ng-model="data.email">
+                </label>
+                <div class="error-container" ng-show="fsignup.email.$error" ng-messages="fsignup.email.$error">
+                    <!-- <div ng-messages-include="error-list.html"></div> -->
+                </div>
+                <label name="state" class="item item-input faded" ng-class="{ 'has-errors' : fsignup.state.$invalid, 'no-errors' : fsignup.state.$valid}">
+                    <select  ng-model="data.state" required name="state" ng-options="state.name for state in states track by state.name">
+                        <option value="">-- Select State --</option>
+                    </select>
+                </label>
+                <div class="error-container" ng-show="fsignup.state.$error" ng-messages="fsignup.state.$error">
+                    <!-- <div ng-messages-include="error-list.html"></div> -->
+                </div>
+                </div>
+                    </div>
+            </ion-list>
+        </form>
+        <div class="row">
+            <div class="col col-offset-10 col-80">
+                <a style="" class="button button-positive button-block " ng-disabled="fsignup.$invalid" ng-click="signup(data)">Sign up</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

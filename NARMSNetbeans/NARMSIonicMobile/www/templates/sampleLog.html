@@ -1,0 +1,243 @@
+
+<ion-view style="" title="Sample Log">
+    <ion-content class="has-header" overflow-scroll="true" padding="true">
+        <h1 style="">Sample Log</h1>
+        <form style="" class="list">
+            <ion-item style="" class="item-divider item-icon-right">
+                Store
+                <i class="icon ion-plus" ng-click="showAddNewStoreModel()"></i>
+            </ion-item>
+                <label style="" name="storeName" class="item item-input" modal-select="" ng-model="store" options="selectableNames" modal-title="Select a Store" has-search="true">
+                    <div class="option">
+                      <h2>{{option.storeName}}</h2>
+                      <p>{{option.storeAddress}}</p>
+                    </div> 
+                    <span class="input-label">Name</span>
+                    <input ng-model="store.storeName" type="text" placeholder="Store Name" readonly/>
+                </label>
+                <label style="" name="storeAddress" class="item item-input">
+                    <span class="input-label">Address</span>
+                    <input placeholder="" type="text" ng-model="store.storeAddress" />
+                </label>                
+           
+        <div class="row">
+            <div class="col col-offset-10 col-80">
+<!--            <a style="" class="button button-balanced button-block " ng-click="showAddNewStoreModel()">Add Store</a>-->
+            <a style="" class="button button-balanced button-block " ng-click="showSampleModal(store)">Add Sample</a>
+            <a style="" class="button button-balanced button-block " href="#/homepage/dashboard">Cancel</a>
+            </div>
+        </div>
+        
+        </form>
+    </ion-content>
+    <script id="new-sample.html" type="text/ng-template">
+        <div class="modal">
+            <!-- Modal header bar -->
+            <ion-header-bar class="bar-secondary bar-dark">
+                <h1 class="title">New Sample</h1>
+                <button class="button button-clear button-positive" ng-click="closeNewSample()">Cancel</button>
+            </ion-header-bar>
+            <!-- Modal content area -->
+            
+            <ion-content>
+                <form>
+                    <!--<ion-item style="" class="item-divider">Sample</ion-item>-->
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Meat </div>
+                            <select ng-model="sample.meat" ng-init="meat=meats[0]" ng-options="meat.name for meat in meats" ng-change="chageMeatType(sample)"></select>
+                        </div>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Type </div>
+                            <select ng-model="sample.type" ng-init="type=types[0]" ng-options="type.name for type in types"></select>
+                        </div>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Environment </div>
+                            <select ng-model="sample.organic" ng-init="organic=organics[0]" ng-options="organic.name for organic in organics"></select>
+                        </div>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Packed In Store </div>
+                            <select ng-model="sample.packedInStore" ng-init="packedInStore=packedInStores[0]" ng-options="packedInStore.name for packedInStore in packedInStores"></select>
+                        </div> 
+                        <div class="row item item-input item">
+                            <div class="input-label  col col-33"> Purchase Date </div>
+                            <ionic-datepicker date="sample.datePurchase" class="col col-67"  min="" max="maxDate" callback="callbackofDatePurchase">
+                                <div class="button button-block item item-input-inset margin0"> {{ sample.datePurchase | date:'dd/MM/yyyy' }} 
+                                <i class="icon icon ion-calendar floatRight"></i>                                    
+                                </div>  
+                            </ionic-datepicker>
+                        </div>
+                        <div class="row item item-input item">
+                            <div class="input-label col col-33"> Sell By Date </div>
+                            <ionic-datepicker date="sample.dateSaleBy" class="col col-67"  min="sample.datePurchase" max="" callback="callbackofDateSaleBy">
+                                <div class="button button-block item item-input-inset margin0">{{ sample.dateSaleBy | date:'dd/MM/yyyy' }} 
+                                <i class="icon icon ion-calendar floatRight"></i>                                    
+                            </div>  
+                            </ionic-datepicker>
+                        </div>
+                        <div class="row item item-input item">
+                            <div class="input-label col col-33"> Process Date </div>
+                            <ionic-datepicker date="sample.dateProcess" class="col col-67" min="" max="sample.datePurchase" callback="callbackofDateProcess">
+                                <div class="button button-block item item-input-inset margin0"> {{ sample.dateProcess | date:'dd/MM/yyyy' }}
+                                    <i class="icon icon ion-calendar floatRight"></i>                                    
+                                </div>                          
+                            </ionic-datepicker>
+                        </div>
+                        <!--label style="" name="purchase" class="item item-input item-select">
+                            <span class="input-label">Purchase Date</span>
+                            <input placeholder="" type="date" ng-model="sample.datePurchase" />
+                        </label>
+                        <label style="" name="sellBy" class="item item-input item-select">
+                            <span class="input-label">Sell By Date</span>
+                            <input placeholder="" type="date"  ng-model="sample.dateSaleBy" required/>
+                        </label>
+                        <label style="" name="processDate" class="item item-input item-select">
+                            <span class="input-label">Process Date</span>
+                            <input placeholder="" type="date" ng-model="sample.dateProcess" /> 
+                        </label-->               
+
+                        <div class="item item-input row">
+                            <div class="col col-33"> Country </div>
+                              <fancy-select class="col col-67"
+                              header-text="Select Multiple Countries"
+                              allow-empty='false'
+                              value="val.multiple"
+                              name="countries_text_multiple"
+                              items="countries"
+                              multi-select="true"            
+                              >
+                            </fancy-select>
+                            <!--select ng-model="sample.country" ng-init="country=countries[0]" ng-options="country.countryName for country in countries" readonly></select-->
+                        </div>
+                               
+                        <label style="" name="notes" class="item item-input">
+                            <span class="input-label">Notes</span>
+                            <textarea placeholder="" ng-model="sample.notes"> Notes</textarea>
+                        </label>
+                        <label style="" name="brandCode" class="item item-input item-select"  modal-select="" ng-model="sample.brand" options="selectableAllBrands" modal-title="Select a Store" has-search="true">
+                            <div class="option">
+                              <h2>{{option.brandName}}</h2>
+                              <p>{{option.brandCode}}</p>
+                            </div> 
+                                    <span class="input-label">Brand Code</span>
+                                    <input placeholder="" type="text" ng-model="sample.brand.brandCode" readonly/>
+                        </label> 
+                          <!--p> {{ sample | json}} </p-->
+                       <label style="" name="barCode" class="item item-input" ng-click="captureBarcode()">
+                            <span class="input-label">Bar Code</span>
+                            <input placeholder="" type="text" ng-model="sample.barCode" />
+                        </label>                                
+                    
+                    <div class="row">
+                    <div class="col col-offset-10 col-80">
+                    <!-- sample.status will true after creating sample successfully -->
+                        <button class="button button-block button-balanced" ng-disabled="!sample.status" ng-click="captureBarcode()">Capture barcode</button>
+                        <button class="button button-block button-balanced" ng-disabled="sample.status" ng-click="showSampleImageModal()">Capture Label Image</button>
+                        <button class="button button-block button-balanced" ng-disabled="!sample.status" ng-click="newSample(sample)">Save Sample</button>
+                    </div>
+                    </div>
+                </form>
+            </ion-content>
+        </div>
+
+    </script>
+    
+    <script id="new-sample-image.html" type="text/ng-template">
+        <div class="modal">
+            <!-- Modal header bar -->
+            <ion-header-bar class="bar-secondary bar-dark">
+                <h1 class="title">Sample Image</h1>
+                <button class="button button-clear button-positive" ng-click="closeNewSampleImage()">Cancel</button>
+            </ion-header-bar>
+            <!-- Modal content area -->
+            
+            <ion-content>
+                <form>                    
+                    <!--<ion-item style="" class="item-divider">Sample</ion-item>-->                        
+                        <div class="row">
+                            <div class="col col-offset-10 col-80">
+                                <center ng-if="imageFrontURI">
+                                    <img  ng-src="{{imageFrontURI}}" style="width:100%; padding: 5px 5px 5px 5px;"/>
+                                    {{imageFront}}
+                                </center>
+                                <button class="button button-block button-balanced  icon-left ion-camera" ng-click="getImageFront()">Capture Front Image</button>
+                                <center ng-if="imageBackURI">
+                                    <img  ng-src="{{imageBackURI}}" style="width:100%; padding: 5px 5px 5px 5px;"/>
+                                    {{imageBack}}
+                                </center>
+                                <button class="button button-block button-balanced  icon-left ion-camera" ng-click="getImageBack()">Capture Back Image</button>
+                                <div style="height: 44px;" class="spacer"></div>
+<!--                                <button class="button button-block button-balanced" ng-click="uploadFrontBackImage()">Upload Image</button>-->
+                            </div>
+                        </div>
+                </form>
+            </ion-content>
+        </div>
+
+    </script>
+    <script id="add-new-store.html" type="text/ng-template">
+        <div class="modal">
+            <!-- Modal header bar -->
+            <ion-header-bar class="bar-secondary bar-dark">
+                <h1 class="title">Add New Store</h1>
+                <button class="button button-clear button-positive" ng-click="closeAddNewStore()">Cancel</button>
+            </ion-header-bar>
+            <!-- Modal content area -->
+            
+            <ion-content>
+                <form style="" class="list">
+                    <ion-item style="" class="item-divider">Store</ion-item>
+                        <label style="" name="storeName" class="item item-input">                            
+                            <span class="input-label">Name</span>
+                            <input ng-model="addStore.storeName" type="text" placeholder="Store Name"/>
+                        </label>
+                        <label style="" name="storeAddress" class="item item-input">
+                            <span class="input-label">Address</span>
+                            <input placeholder="" type="text" ng-model="storeAddress" />
+                        </label>  
+                <div class="row">
+                    <div class="col col-offset-10 col-80">
+                    <a style="" class="button button-balanced button-block " ng-click="addNewStore(addStore.storeName,storeAddress)">Add Store</a>                    
+                    </div>
+                </div>
+            </form>
+            </ion-content>
+        </div>
+
+    </script>
+    <script id="fancy-select.html" type="text/ng-template">
+      <ion-list>
+        <ion-item class="item-text-wrap button button-block item item-input-inset margin0" ng-click="showItems($event)">
+          {{name}}                <i class="icon ion-edit floatRight"></i>                                    
+        </ion-item>
+      </ion-list>
+    </script>
+
+    <script id="fancy-select-items.html" type="text/ng-template">
+      <ion-view class="fancy-select-items modal">
+        <ion-header-bar class="bar-positive bar-dark">
+
+          <button ng-click="hideItems()" class="button button-icon ion-ios-arrow-back"></button>
+
+          <h1 class="title">{{headerText}}</h1>
+
+          <button ng-click="validate()" class="button button-icon ion-checkmark"></button>
+
+        </ion-header-bar>
+        <ion-content>
+          <div class="list">
+            <!-- Multi select -->
+            <ion-toggle
+                        ng-repeat="item in items"
+                        ng-if="multiSelect"
+                        ng-checked="item.checked"
+                        ng-model="item.checked"
+                        class="item item-text-wrap">
+              
+              {{item.name}}
+            </ion-toggle>
+            
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+</ion-view>

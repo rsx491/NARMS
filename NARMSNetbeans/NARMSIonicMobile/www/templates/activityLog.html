@@ -1,0 +1,54 @@
+<ion-view style="" title="Activity Log">
+    <!--<ion-content class="has-header" overflow-scroll="true" padding="true">
+        <div class="light">
+            <h2>{{centername}}</h2>
+            <h3 class="dashtitle">Activity for {{samplingDate| date:'MMMM'}}</h3>
+            <div style="height: 20px;" class="spacer"></div>
+            <h4 class="dashtext under" style="">Beef Samples Collected: <span class="dynamic">{{centerBeefCount}}/{{centerBeefLimit}}</span></h4>
+            <h4 class="dashtext under" style="">Chicken Samples Collected:<span class="dynamic">{{centerChickenCount}}/{{centerChickenLimit}}</span></h4>
+            <h4 class="dashtext under" style="">Pork Samples Collected:<span class="dynamic">{{centerPorkCount}}/{{centerPorkLimit}}</span></h4>
+            <h4 class="dashtext under" style="">Turkey Samples Collected:<span class="dynamic">{{centerTurkeyCount}}/{{centerTurkeyLimit}}</span></h4>
+            <div style="height: 20px;" class="spacer"></div>
+        </div>
+        <div style="height: 20px;" class="spacer"></div>
+        <div class="light">
+            <h2 class="dashtitle" style="">My Activity<br/>for {{samplingDate| date:'MMMM'}}</h2>
+            <div style="height: 20px;" class="spacer"></div>
+            <h4 class="dashtext under" style="">Beef Samples Collected: <span class="dynamic">{{userBeefCount}}</span></h4>
+            <h4 class="dashtext under" style="">Chicken Samples Collected:<span class="dynamic">{{userChickenCount}}</span></h4>
+            <h4 class="dashtext under" style="">Pork Samples Collected:<span class="dynamic">{{userPorkCount}}</span></h4>
+            <h4 class="dashtext under" style="">Turkey Samples Collected:<span class="dynamic">{{userTurkeyCount}}</span></h4>
+            <div style="height: 20px;" class="spacer"></div>
+        </div>
+    </ion-content>-->
+    <ion-tabs class="tabs-balanced tabs-icon-top">
+        <ion-tab title="My Activity" icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+            <ion-content class="has-header" overflow-scroll="true" padding="true">
+            <div class="light">
+                <h3 class="dashtitle narmsgreen" style="">My Activity<br/>for {{samplingDate| date:'MMMM'}}</h3>
+                <div style="height: 20px;" class="spacer"></div>
+                <h4 class="dashtext under" style="">Beef Samples Collected: <br/><span class="dynamic">{{userBeefCount}}</span></h4>
+                <h4 class="dashtext under" style="">Chicken Samples Collected:<br/><span class="dynamic">{{userChickenCount}}</span></h4>
+                <h4 class="dashtext under" style="">Pork Samples Collected:<br/><span class="dynamic">{{userPorkCount}}</span></h4>
+                <h4 class="dashtext under" style="">Turkey Samples Collected:<br/><span class="dynamic">{{userTurkeyCount}}</span></h4>
+                <div style="height: 20px;" class="spacer"></div>
+            </div>
+            </ion-content>
+        </ion-tab>
+        
+        <ion-tab title="Center Activity" icon-on="ion-ios-color-filter" icon-off="ion-ios-color-filter-outline">
+            <ion-content class="has-header" overflow-scroll="true" padding="true">
+            <div class="light">
+                <h3 class="narmsgreen">{{centername}}</h3>
+                <h4 class="dashtitle narmsgreen">Activity for {{samplingDate| date:'MMMM'}}</h4>
+                <div style="height: 20px;" class="spacer"></div>
+                <h4 class="dashtext under" style="">Beef Samples Collected: <br/><span class="dynamic">{{centerBeefCount}}/{{centerlimits['Beef']}}</span></h4>
+                <h4 class="dashtext under" style="">Chicken Samples Collected:<br/><span class="dynamic">{{centerChickenCount}}/{{centerlimits['Chicken']}}</span></h4>
+                <h4 class="dashtext under" style="">Pork Samples Collected:<br/><span class="dynamic">{{centerPorkCount}}/{{centerlimits['Pork']}}</span></h4>
+                <h4 class="dashtext under" style="">Turkey Samples Collected:<br/><span class="dynamic">{{centerTurkeyCount}}/{{centerlimits['Turkey']}}</span></h4>
+                <div style="height: 20px;" class="spacer"></div>
+            </div>
+            </ion-content>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

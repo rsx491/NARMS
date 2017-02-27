@@ -1,0 +1,116 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+$base-background-color: #ffffff;
+
+$button-light-text: #052d46;
+$button-stable-text: #052d46;
+$button-positive-text: rgb(17,104,53);
+$button-calm-text: #052d46;
+$button-balanced-text: #ffffff;
+$button-energized-text: #052d46;
+$button-assertive-text: #052d46;
+$button-royal-text: #052d46;
+$button-dark-text: #ffffff;
+
+$light: #ffffff;
+$stable: #ffffff;
+$positive: #ffffff;
+$calm: rgb(17,104,53);
+$balanced: rgb(17,104,53);
+$energized: rgb(17,104,53);
+$assertive: rgb(17,104,53);
+$royal: rgb(17,104,53);
+$dark: rgb(57,64,90);
+
+
+.light{
+background-color: rgb(238,239,243);
+padding-left: 5%;
+padding-right: 5%;
+}
+
+h2{
+color: rgb(17,104,53);
+}
+
+.dynamic{
+color: rgb(37,75,158);
+}
+
+.dashtext{
+color: rgb(128,133,136);
+}
+
+.dashtext.under{
+border-bottom: 1px dotted;
+border-bottom-color: rgb(128,133,136);
+}
+
+.dashtitle{
+border-bottom: 1px solid;
+border-bottom-color: rgb(17,104,53);
+}
+.narmsgreen{
+color: rgb(17,104,53);
+}
+.logo{
+background: url(../templates/images/Narms-Logo.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+width: 80%;
+height: 20%;
+margin: auto;
+}
+.login-text{
+background: transparent;
+color: #ffffff;
+padding-left: 10%;
+}
+.login-icon{
+background: transparent;
+color: #ffffff;
+padding-left: 10%;
+padding-right: 10%;
+}
+.item.item-input.faded{
+background: rgba(255,255,255,0.2);
+}
+.login-text::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #ffffff;
+}
+.login-text:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #ffffff;
+   opacity:  1;
+}
+.login-text::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #ffffff;
+   opacity:  1;
+}
+.login-text:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #ffffff;
+}
+.login-text:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:    #ffffff;
+}
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";

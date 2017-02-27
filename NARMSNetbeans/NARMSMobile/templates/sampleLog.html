@@ -1,0 +1,117 @@
+<ion-view style="" title="Sample Log">
+    <ion-content class="has-header" overflow-scroll="true" padding="true">
+        <h1 style="">Sample Log</h1>
+        <form style="" class="list">
+            <ion-item style="" class="item-divider">Store</ion-item>
+            <label style="" name="storeName" class="item item-select">
+                <span class="input-label">Name</span>
+                <select>
+                    <option>Price Chopper</option>
+                    <option>Walmart</option>
+                    <option>Super Shop</option>
+                </select>
+            </label>
+            <label style="" name="storeAddress" class="item item-select">
+                <span class="input-label">Address</span>
+                <select>
+                    <option>121 Farmington Ave, Bristol CT, 06010</option>
+                    <option>325 Oakland Street, Bristol CT, 06010</option>
+                    <option>747 Pine Street, Bristol CT, 06010</option>
+                </select>
+            </label>
+
+            <!--p> {{ samples | json}} </p-->
+        
+            <a style="" class="button button-stable button-block " ng-click="showSampleModal()">Add Sample</a>
+            <a style="" class="button button-stable button-block " href="#/homepage/dashboard">Cancel</a>
+        </form>
+    </ion-content>
+    <script id="new-sample.html" type="text/ng-template">
+        <div class="modal">
+            <!-- Modal header bar -->
+            <ion-header-bar class="bar-secondary">
+                <h1 class="title">New Sample</h1>
+                <button class="button button-clear button-positive" ng-click="closeNewSample()">Cancel</button>
+            </ion-header-bar>
+            <!-- Modal content area -->
+            
+            <ion-content>
+                <form ng-submit="newSample(sample)">                    
+                    <ion-item style="" class="item-divider">Sample</ion-item>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Meat </div>
+                            <select ng-model="sample.meat" ng-init="meat=meats[0]" ng-options="meat.name for meat in meats"></select>
+                        </div>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Type </div>
+                            <select ng-model="sample.type" ng-init="type=types[0]" ng-options="type.name for type in types"></select>
+                        </div>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> organic </div>
+                            <select ng-model="sample.organic" ng-init="organic=organics[0]" ng-options="organic.name for organic in organics"></select>
+                        </div>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Packed In Stroe </div>
+                            <select ng-model="sample.packedInStore" ng-init="packedInStore=packedInStores[0]" ng-options="packedInStore.name for packedInStore in packedInStores"></select>
+                        </div> 
+                        <label style="" name="purchase" class="item item-input">
+                            <span class="input-label">Purchase</span>
+                            <input placeholder="" type="date" ng-model="sample.datePurchase" />
+                        </label>
+                        <label style="" name="sellBy" class="item item-input">
+                            <span class="input-label">Sell By</span>
+                            <input placeholder="" type="date" ng-model="sample.dateSaleBy" />
+                        </label>
+                        <label style="" name="processDate" class="item item-input">
+                            <span class="input-label">Process date</span>
+                            <input placeholder="" type="date" ng-model="sample.dateProcess" /> 
+                        </label>
+                        <div class="item item-input item-select">
+                            <div class="input-label"> Country </div>
+                            <select ng-model="sample.country" ng-init="country=countries[0]" ng-options="country.name for country in countries"></select>
+                        </div>
+                        <label style="" name="brandCode" class="item item-input">
+                            <span class="input-label">Brand Code</span>
+                            <input placeholder="" type="text" ng-model="sample.barandCode" />
+                        </label>
+                        <label style="" name="notes" class="item item-input">
+                            <span class="input-label">Notes</span><textarea placeholder="" ng-model="sample.notes"> Notes</textarea>
+                        </label>
+                          <!--p> {{ sample | json}} </p-->
+                       <label style="" name="brandCode" class="item item-input">
+                            <span class="input-label">Bar Code</span>
+                            <input placeholder="" type="text" ng-model="sample.barCode" />
+                        </label>
+                    <div class="padding">
+                        <button type="submit" class="button button-block button-positive">Save Sample</button>
+                    </div>
+                </form>
+            </ion-content>
+        </div>
+
+    </script>
+    
+    <script id="new-sample-image.html" type="text/ng-template">
+        <div class="modal">
+            <!-- Modal header bar -->
+            <ion-header-bar class="bar-secondary">
+                <h1 class="title">Sample Image</h1>
+                <button class="button button-clear button-positive" ng-click="closeNewSample()">Cancel</button>
+            </ion-header-bar>
+            <!-- Modal content area -->
+            
+            <ion-content>
+                <form ng-submit="newSample(sample)">                    
+                    <ion-item style="" class="item-divider">Sample</ion-item>
+                            <h1 style="">Capture Image</h1>
+                    <a style="" class="button button-stable button-block  icon-left ion-android-camera" href="#/saveimage">Capture Image</a>
+                    <div style="width: 300px; height: 44px;" class="spacer"></div>
+                    <div class="padding">
+                        <button type="submit" class="button button-block button-positive">Save Sample</button>
+                    </div>
+                </form>
+            </ion-content>
+        </div>
+
+    </script>
+</ion-view>

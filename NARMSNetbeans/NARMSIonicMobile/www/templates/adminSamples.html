@@ -1,0 +1,71 @@
+<ion-view style="" title="Admin Panel - Samples">
+    <ion-content class="has-header" overflow-scroll="true" padding="true">
+        <div class="light admin-content">
+            <h2 class="dashtitle" style="">Samples</h2>
+            
+           <div class="row">
+                <button type="button" ng-click="showAddForm()">+ New Record</button>
+                <button type="button" ng-click="fetchData()">Refresh Data</button>
+            </div>
+            <div class="row" id="recordForm" ng-show="showRecordForm">
+                <form style="" class="list">
+                    <div class="row crud-row" ng-repeat="f in fields.samples">
+                    <label class="item item-input">{{ f.label }}</label>
+                        <!-- add more input types -->
+                    <input ng-if="!f.type||f.type=='text'" ng-readonly="f.readonly" type="text" placeholder="{{ f.label }}" ng-model="selectedRecord[f.label]">
+
+                    <input ng-if="f.type&&f.type=='bool'" ng-readonly="f.readonly" type="radio" ng-name="f.label" ng-value="true" ng-model="selectedRecord[f.label]"><span ng-if="f.type&&f.type=='bool'"> True&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                    <input ng-if="f.type&&f.type=='bool'" ng-readonly="f.readonly" type="radio" ng-name="f.label" ng-value="false" ng-model="selectedRecord[f.label]"><span ng-if="f.type&&f.type=='bool'">False</span>
+                
+
+                    <ionic-datepicker ng-if="f.type&&f.type=='date'" input-obj="dateFields[f.label]">
+                        <button class="button button-block button-positive">{{ dateFields[f.label].inputDate | date:dateFields[f.label].dateFormat }}</button>
+                    </ionic-datepicker>
+                    <div style="color:black;" ng-if="f.type&&f.type=='date'">{{ selectedRecord[f.label] }}</div>
+
+                    </div>
+                    
+
+                    <button type="button" ng-click="submitRecord()">{{ formSubmitLabel }}</button>
+                    <button type="button" ng-click="cancelForm()">Cancel</button>
+                </ion-item>
+                </form>
+            </div>
+            
+            <div class="crud-pagination">
+                <ul>
+                <li>Pages:</li>
+                <li ng-repeat="n in pagination.createRange()">
+                    <button ng-click="pagination.goToPage(n)" ng-class="(pagination.currentPage==n?'selected':'not-selected')">{{ n }}</button>
+                </li>
+                </ul>
+            </div>
+
+            <table class="crud">
+                <thead>
+                <tr>
+                    <th class="crud">Actions</th>
+                    <th class="crud" ng-repeat="f in fields.samples" ng-click="switchOrder(f.label)">{{ f.label }}</th>
+                   
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="crud" ng-repeat="sample in data.samples | orderBy : orderRecordsBy | limitTo : pagination.numPerPage : (pagination.currentPage-1)*pagination.numPerPage">
+                    <td class="crud">
+                        <button type="button" ng-click="clickedEdit(sample)">Edit</button>
+                        <button type="button" ng-click="clickedDelete(sample)">Delete</button>
+                    </td>
+                    <td class="crud" ng-repeat="field in fields.samples">{{ sample[field.label] }}</td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+            <br>
+            <a class="button" ng-href="{{csvHREF}}" download="samples.csv">Download as CSV</a>
+
+
+        </div>
+    </ion-content>
+</ion-view>

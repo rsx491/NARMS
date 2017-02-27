@@ -1,0 +1,40 @@
+    <ion-view title="Sample log details">
+
+      <ion-nav-buttons side="left">
+
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+      </ion-nav-buttons>
+      <ion-content has-header="true"  has-footer="true" padding="true">
+          <ul class="list" ng-show="mySample.length == 0">
+                <li class="item">
+                  No Samples Found.
+                </li>
+            </ul>
+            <ion-list>
+                <ion-item  ng-repeat="item in mySample " ng-click="showSampleEdit(item)" >
+                    <label  >           
+                            {{item.sampleid}}
+                            {{meetNames[item.meat]}}
+                            {{typeNames[item.type]}}
+                            {{item.datePurchase | date:'yyyy-MM-dd'}}   
+
+                    </label>     
+
+                </ion-item>
+            </ion-list>
+        </ion-content>
+        <ion-footer-bar>
+            <div class="tabs">              
+              <a nav-clear class="tab-item disable-user-behavior" title="Center Sample list" icon-on="ion-ios-color-filter" icon-off="ion-ios-color-filter-outline" ui-sref="hOME.sampleLogDetailsByCenter">
+                <i class="icon ion-ios-color-filter"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+              </a>
+              <a nav-clear class="tab-item disable-user-behavior active" title="Search Sample list" icon-on="ion-search" icon-off="ion-search" ui-sref="hOME.sampleLogDetailsBySearch">
+                <i class="icon ion-search"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+              </a>
+                <a nav-clear class="tab-item disable-user-behavior" title="My Sample list" nav-clear ui-sref="hOME.sampleLogDetails">
+                <i class="icon ion-ios-person-outline"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+              </a>
+            </div>
+        </ion-footer-bar>
+    </ion-view>
